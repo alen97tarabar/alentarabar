@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="lightbox2-2.11.3\dist\css\lightbox.css" rel="stylesheet" />
+    <title>Album</title>
+
+<style>
+    
+.card-image {
+    object-fit: cover;
+    height: 225px; 
+    border-radius: 3px 3px 0px 0px;
+}
+
+.noHover {
+    background-color: blue;
+}
+
+.noHover:not(:hover) {
+    background-color: blue;
+}
+
+.frontPageBackground {
+    height: 100vh;
+    background-image: url('images/pexels-background.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.roundedImage {
+    border-radius: 50%;
+    height: 150px;
+    box-shadow: 2px 2px 10px #ffae00;
+}
+
+.textShadow {
+    text-shadow: 2px 2px 2px #000000;
+}
+</style>
+
+</head>
+
+<body>
+<div class="frontPageBackground">
+    <section data-aos="flip-left" data-aos-duration="3000" class="py-5 text-center container">
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1"><img class="roundedImage" src="images/icon.jpg" alt="image-1" /></a>
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light textShadow">Album</h1>
+                <p class="textShadow">Made using HTML, CSS, Bootstrap, the JavaScript frameworks Lightbox, GreenSock and AoS and the Countapi</p>
+                <p>
+                <a href="#firstRow" class="btn btn-primary my-2">Scroll down</a>
+                <a href="#" class="btn btn-secondary my-2">Back to Portfolio</a>
+                <h3 class="textShadow">Page views:</h3>
+                <p id="pageViews">...</p>
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="album py-5 bg-light">
+<div class="container">
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div data-aos="fade-up" class="col" id="firstRow">
+        <div class="card shadow-sm">
+            <img src="images/pexels-red.jpg" class="img-fluid card-image" alt="image">
+            <div class="card-body">
+                <p class="card-text">Photo description here...</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    <a href="images/pexels-red.jpg" onclick="viewCount(this)" data-lightbox="image-1" data-title="Maybe some text here..." class="btn btn-sm btn-outline-secondary" id="view100">View</a>
+                    <small class="btn btn-sm btn-outline-secondary no-hover">Date: 6/11/2021</small>
+                    </div>
+                    <small class="text-muted"> Views: <small id="visits_view100" class="text-muted">0</small> </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div data-aos="fade-up" class="col">
+    <div class="card shadow-sm">
+        <img src="images/pexels-green.jpg" class="img-fluid card-image" alt="image2">
+        <div class="card-body">
+            <p class="card-text">Photo description here...</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <a href="images/pexels-green.jpg" onclick="viewCount(this)" data-lightbox="image-1" data-title="Maybe some text here..." class="btn btn-sm btn-outline-secondary" id="view010">View</a>
+                <small class="btn btn-sm btn-outline-secondary no-hover">Date: 6/11/2021</small>
+                </div>
+                <small class="text-muted"> Views: <small id="visits_view010" class="text-muted">0</small> </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-aos="fade-up" class="col">
+    <div class="card shadow-sm">
+        <img src="images/pexels-blue.jpg" class="img-fluid card-image" alt="image3">
+        <div class="card-body">
+            <p class="card-text">Photo description here...</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <a href="images/pexels-blue.jpg" onclick="viewCount(this)" data-lightbox="image-1" data-title="Maybe some text here..." class="btn btn-sm btn-outline-secondary" id="view001">View</a>
+                <small class="btn btn-sm btn-outline-secondary no-hover">Date: 6/11/2021</small>
+                </div>
+                <small class="text-muted"> Views: <small id="visits_view001" class="text-muted">0</small> </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-aos="fade-up" data-aos-duration="300" class="col">
+    <div class="card shadow-sm">
+        <img src="images/pexels-red-2.jpg" class="img-fluid card-image" alt="image4">
+        <div class="card-body">
+            <p class="card-text">Photo description here...</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <a href="images/pexels-red-2.jpg" onclick="viewCount(this)" data-lightbox="image-1" data-title="Maybe some text here..." class="btn btn-sm btn-outline-secondary" id="view200">View</a>
+                <small class="btn btn-sm btn-outline-secondary no-hover">Date: 6/11/2021</small>
+                </div>
+                <small class="text-muted"> Views: <small id="visits_view200" class="text-muted">0</small> </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-aos="fade-up" data-aos-duration="600" class="col">
+    <div class="card shadow-sm">
+        <img src="images/pexels-green-2.jpg" class="img-fluid card-image" alt="image5">
+        <div class="card-body">
+            <p class="card-text">Photo description here...</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <a href="images/pexels-green-2.jpg" onclick="viewCount(this)" data-lightbox="image-1" data-title="Maybe some text here..." class="btn btn-sm btn-outline-secondary" id="view020">View</a>
+                <small class="btn btn-sm btn-outline-secondary no-hover">Date: 6/11/2021</small>
+                </div>
+                <small class="text-muted"> Views: <small id="visits_view020" class="text-muted">0</small> </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-aos="fade-up" data-aos-duration="900" class="col">
+    <div class="card shadow-sm">
+        <img src="images/pexels-blue-2.jpg" class="img-fluid card-image" alt="image6">
+        <div class="card-body">
+            <p class="card-text">Photo description here...</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <a href="images/pexels-blue-2.jpg" onclick="viewCount(this)" data-lightbox="image-1" data-title="Maybe some text here..." class="btn btn-sm btn-outline-secondary" id="view002">View</a>
+                <small class="btn btn-sm btn-outline-secondary no-hover">Date: 6/11/2021</small>
+                </div>
+                <small class="text-muted"> Views: <small id="visits_view002" class="text-muted">0</small> </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-aos="fade-up" class="col">
+    <div class="card shadow-sm">
+        <img src="images/pexels-red-3.jpg" class="img-fluid card-image" alt="image7">
+        <div class="card-body">
+            <p class="card-text">Photo description here...</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <a href="images/pexels-red-3.jpg" onclick="viewCount(this)" data-lightbox="image-1" data-title="Maybe some text here..." class="btn btn-sm btn-outline-secondary" id="view300">View</a>
+                <small class="btn btn-sm btn-outline-secondary no-hover">Date: 6/11/2021</small>
+                </div>
+                <small class="text-muted"> Views: <small id="visits_view300" class="text-muted">0</small> </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-aos="fade-up" class="col">
+    <div class="card shadow-sm">
+        <img src="images/portret-test.jpg" class="img-fluid card-image" alt="image8">
+        <div class="card-body">
+            <p class="card-text">Photo description here...</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <a href="images/portret-test.jpg" onclick="viewCount(this)" data-lightbox="image-1" data-title="Maybe some text here..." class="btn btn-sm btn-outline-secondary" id="view030">View</a>
+                <small class="btn btn-sm btn-outline-secondary no-hover">Date: 6/11/2021</small>
+                </div>
+                <small class="text-muted"> Views: <small id="visits_view030" class="text-muted">0</small> </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-aos="fade-up" class="col">
+    <div class="card shadow-sm">
+        <img src="images/pexels-blue-3.jpg" class="img-fluid card-image" alt="image9">
+        <div class="card-body">
+            <p class="card-text">Photo description here...</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <a href="images/pexels-blue-3.jpg" onclick="viewCount(this)" data-lightbox="image-1" data-title="Maybe some text here..." class="btn btn-sm btn-outline-secondary" id="view003">View</a>
+                <small class="btn btn-sm btn-outline-secondary no-hover">Date: 6/11/2021</small>
+                </div>
+                <small class="text-muted"> Views: <small id="visits_view003" class="text-muted">0</small> </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+
+const countEl = document.getElementById('pageViews');
+
+updateVisitCount();
+
+function updateVisitCount() {
+	fetch('https://api.countapi.xyz/update/alen-tarabar.herokuapp.com/?amount=1')
+	.then(res => res.json())
+	.then(res => {
+		countEl.innerHTML = res.value;
+	})
+}
+
+const imageCard = ["view100","view010","view001","view200","view020","view002","view300","view030","view003",];
+
+
+imageCard.forEach(function (item, index) {
+console.log(item, index);
+var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/get/alen-tarabar.herokuapp.com/" + item);
+    xhr.responseType = "json";
+    xhr.onload = function() {
+        document.getElementById('visits_' + item).innerText = this.response.value;
+        console.log(this.response.value);
+    }
+    xhr.send();
+});
+
+
+function viewCount(obj) {
+    var id = obj.id;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/hit/alen-tarabar.herokuapp.com/" + id);
+    xhr.responseType = "json";
+    xhr.onload = function() {
+        document.getElementById("visits_" + id).innerHTML = this.response.value;
+    }
+    xhr.send();
+}
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  
+<script src="lightbox2-2.11.3\dist\js\lightbox.js"></script>
+
+<script>
+    AOS.init();
+</script>
+</body>
+</html>

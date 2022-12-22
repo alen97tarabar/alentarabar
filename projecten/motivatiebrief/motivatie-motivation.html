@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="lightbox2-2.11.3\dist\css\lightbox.css" rel="stylesheet" />
+    <title>Album</title>
+
+<style>
+
+.engels {
+    display: none;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container-lg my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <button onclick="flipCard()" id="nl" class="btn btn-primary nederland">Nederlands</button>
+                    <button onclick="flipCardReverse()" id="en" class="btn btn-primary engels">English</button>
+                  </div>
+                <div class="card-body">
+                  <h3 class="card-title nederland" data-aos="fade-left">Delve Deeper</h3>
+                  <h5 class="nederland">Motivatiebrief</h5>
+                  <h3 class="card-title engels" data-aos="fade-right">Delve Deeper</h3>
+                  <h5 class="engels">Motivation letter</h5>
+                  <p class="card-text nederland" data-aos="fade-right">
+                    Purmerend, "Datum"
+                        <br>
+                    Betreft: "Functie: "                   
+                  </p>
+                  <p class="card-text engels" data-aos="fade-right">
+                    Purmerend, "Date"
+                        <br>
+                    Betreft: "Function: "               
+                  </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" data-aos="fade-left">
+                      <p class="nederland">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet est quis mauris gravida porttitor. 
+                        Nulla dictum, turpis ac aliquet semper, orci risus malesuada magna, 
+                        a lobortis turpis metus eu massa. Vivamus faucibus, mi sit amet tincidunt mollis, 
+                        eros felis iaculis risus, et molestie libero sapien in elit. Duis nec euismod mauris. 
+                        Pellentesque ornare, ex vitae condimentum volutpat, nibh justo efficitur magna, 
+                        eget faucibus eros neque quis quam. Donec nibh neque, facilisis vitae arcu placerat, 
+                        pellentesque viverra mi. Proin vel lacinia nisl. Praesent convallis libero ante, et 
+                        dapibus risus euismod vel. Etiam non congue metus. Praesent dapibus enim vel justo blandit, 
+                        ut mattis est ultricies. Sed nec mollis purus. Cras vitae mi dictum, imperdiet nibh vitae, hendrerit quam.
+                      </p>
+                      <p class="engels">Intro</p>
+                    </li>
+                  <li class="list-group-item" data-aos="fade-right">
+                      <p class="nederland">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet est quis mauris gravida porttitor. 
+                        Nulla dictum, turpis ac aliquet semper, orci risus malesuada magna, 
+                        a lobortis turpis metus eu massa. Vivamus faucibus, mi sit amet tincidunt mollis, 
+                        eros felis iaculis risus, et molestie libero sapien in elit. Duis nec euismod mauris. 
+                        Pellentesque ornare, ex vitae condimentum volutpat, nibh justo efficitur magna, 
+                        eget faucibus eros neque quis quam. Donec nibh neque, facilisis vitae arcu placerat, 
+                        pellentesque viverra mi. Proin vel lacinia nisl. Praesent convallis libero ante, et 
+                        dapibus risus euismod vel. Etiam non congue metus. Praesent dapibus enim vel justo blandit, 
+                        ut mattis est ultricies. Sed nec mollis purus. Cras vitae mi dictum, imperdiet nibh vitae, hendrerit quam.                      </p>
+                      <p class="engels">Middle</p>
+                    </li>
+                  <li class="list-group-item" data-aos="fade-left">
+                      <p class="nederland">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet est quis mauris gravida porttitor. 
+                        Nulla dictum, turpis ac aliquet semper, orci risus malesuada magna, 
+                        a lobortis turpis metus eu massa. Vivamus faucibus, mi sit amet tincidunt mollis, 
+                        eros felis iaculis risus, et molestie libero sapien in elit. Duis nec euismod mauris. 
+                        Pellentesque ornare, ex vitae condimentum volutpat, nibh justo efficitur magna, 
+                        eget faucibus eros neque quis quam. Donec nibh neque, facilisis vitae arcu placerat, 
+                        pellentesque viverra mi. Proin vel lacinia nisl. Praesent convallis libero ante, et 
+                        dapibus risus euismod vel. Etiam non congue metus. Praesent dapibus enim vel justo blandit, 
+                        ut mattis est ultricies. Sed nec mollis purus. Cras vitae mi dictum, imperdiet nibh vitae, hendrerit quam.
+                      </p>
+                      <p class="engels">Afsluiting</p>
+                    </li>
+                <li class="list-group-item" data-aos="fade-right">
+                    <p class="nederland">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet est quis mauris gravida porttitor. 
+                      Nulla dictum, turpis ac aliquet semper, orci risus malesuada magna, 
+                      a lobortis turpis metus eu massa. Vivamus faucibus, mi sit amet tincidunt mollis, 
+                      eros felis iaculis risus, et molestie libero sapien in elit. Duis nec euismod mauris. 
+                      Pellentesque ornare, ex vitae condimentum volutpat, nibh justo efficitur magna, 
+                      eget faucibus eros neque quis quam. Donec nibh neque, facilisis vitae arcu placerat, 
+                      pellentesque viverra mi. Proin vel lacinia nisl. Praesent convallis libero ante, et 
+                      dapibus risus euismod vel. Etiam non congue metus. Praesent dapibus enim vel justo blandit, 
+                      ut mattis est ultricies. Sed nec mollis purus. Cras vitae mi dictum, imperdiet nibh vitae, hendrerit quam.
+                    </p>
+                    <p class="engels">Afsluiting</p>
+                    </li>
+                <li class="list-group-item" data-aos="fade-left">
+                    <p class="nederland">
+                        Met vriendelijke groet,
+
+
+                        Alen Tarabar                        
+                    </p>
+                    <p class="engels">Afsluiting</p>
+                </li>
+                </ul>
+                <div class="card-body" data-aos="fade-up">
+                  <a href="#" class="card-link nederland">Bekijk CV</a>
+                  <a href="#" class="card-link engels">View CV</a>
+
+                  <a href="#" class="card-link nederland">Homepagina</a>
+                  <a href="#" class="card-link engels">Homepage</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/CSSRulePlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/EaselPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/MotionPathPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/PixiPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/TextPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+
+<script>
+
+function flipCard() {
+    gsap.to(".card", {duration: 2, skewY: 180});
+}
+
+$(document).ready(function(){
+    $("#nl").click(function(){
+        $(".nederland").toggle();
+        $(".engels").toggle();
+});
+});
+
+$(document).ready(function(){
+    $("#en").click(function(){
+        $(".engels").toggle();
+        $(".nederland").toggle();
+});
+});
+
+</script>
+
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
